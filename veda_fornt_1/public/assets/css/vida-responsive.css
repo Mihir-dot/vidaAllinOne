@@ -1,0 +1,396 @@
+/**
+ * VIDA front — global responsive layer (load after style.css)
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100vw;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-wrapper {
+  overflow-x: clip;
+  overflow-y: visible;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Header / logo */
+.header-logo,
+.mobile-menu .nav-logo img {
+  max-height: 52px;
+  width: auto;
+  max-width: min(220px, 48vw);
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .header-logo,
+  .mobile-menu .nav-logo img {
+    max-height: 42px;
+    max-width: 44vw;
+  }
+}
+
+.main-header .outer-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.menu-area {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Touch-friendly controls */
+.mobile-nav-toggler {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobile-menu .close-btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Long labels (NDIS-style service descriptions in nav/cards) */
+.main-menu .navigation a,
+.mobile-menu .navigation li > a,
+.mobile-menu .navigation li ul li > a,
+.service-sidebar .category-list a,
+.news-block-one .lower-content h3,
+.news-block-one .lower-content p,
+.service-details-content .text p,
+.service-details-content .text h2 {
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.row.clearfix {
+  max-width: 100%;
+}
+
+/* Bootstrap 5: columns that only specify sm+ stack full-width on very small phones */
+@media (max-width: 575.98px) {
+  .row.clearfix > .news-block,
+  .row.clearfix > .service-block,
+  .row.clearfix > .feature-block,
+  .row.clearfix > .footer-column {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
+
+/* Banner / hero */
+.banner-section .banner-carousel,
+.banner-section .banner-carousel .swiper-wrapper,
+.banner-section .banner-carousel .swiper-slide {
+  width: 100%;
+  max-width: 100%;
+}
+
+.banner-carousel .content-box {
+  max-width: 100%;
+  padding: 0 12px;
+}
+
+@media (max-width: 767px) {
+  .banner-carousel .content-box h2 {
+    font-size: clamp(24px, 6.5vw, 38px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .banner-carousel .content-box p {
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.5;
+  }
+
+  .banner-carousel .content-box .content-inner {
+    padding: 24px 18px 28px !important;
+  }
+
+  .banner-carousel .slide-item {
+    padding: 72px 0 88px !important;
+    min-height: min(85vh, 640px);
+  }
+
+  .banner-carousel .owl-nav button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 399px) {
+  .banner-carousel .content-box .content-inner {
+    padding: 18px 14px 22px !important;
+  }
+}
+
+/* Section overlap: only on larger screens (avoids mobile overlap/clipping) */
+.vida-overlap-up {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .vida-overlap-up--sm {
+    margin-top: -5% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .vida-overlap-up--md {
+    margin-top: -9% !important;
+  }
+
+  .vida-overlap-up--lg {
+    margin-top: -10% !important;
+  }
+}
+
+/* Services listing page */
+.vida-services-section {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .vida-services-section {
+    margin-top: -9% !important;
+  }
+}
+
+/* Resources detail block */
+.vida-resources-content {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .vida-resources-content {
+    margin-top: -10% !important;
+  }
+}
+
+/* About — values heading */
+.vida-values-heading {
+  color: #fff;
+  margin-top: 0;
+  padding: 0 12px;
+}
+
+@media (min-width: 992px) {
+  .vida-values-heading {
+    margin-top: -2%;
+  }
+}
+
+/* Founder page */
+.vida-founder-section {
+  margin-top: 0 !important;
+}
+
+.vida-founder-inner {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .vida-founder-section {
+    margin-top: -5% !important;
+  }
+
+  .vida-founder-inner {
+    margin-top: -5% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .team-details-content .image-box.mr_30,
+  .team-details-content .content-box.ml_30 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-page-container.pt_150 {
+    padding-top: 64px !important;
+  }
+
+  .sidebar-page-container.pb_150 {
+    padding-bottom: 64px !important;
+  }
+}
+
+/* Home: choose us block */
+.vida-chooseus-section {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .vida-chooseus-section {
+    margin-top: -5% !important;
+  }
+}
+
+/* Home: news / services strip */
+.vida-home-news-section {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .vida-home-news-section {
+    margin-top: -9% !important;
+  }
+}
+
+/* About / image columns: drop desktop-only margins on small screens */
+@media (max-width: 991px) {
+  .image_block_one .image-box.pr_50.mr_30,
+  .content_block_one .content-box.ml_30 {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .service-sidebar.mr_40 {
+    margin-right: 0 !important;
+    margin-bottom: 40px;
+  }
+}
+
+/* Service detail sidebar list */
+@media (max-width: 991px) {
+  .service-sidebar .category-list a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+/* Page title */
+@media (max-width: 767px) {
+  .page-title {
+    padding: 72px 0 64px !important;
+  }
+
+  .page-title h1 {
+    font-size: clamp(22px, 7vw, 36px) !important;
+    line-height: 1.2 !important;
+    padding: 0 8px;
+  }
+
+  .page-title .bread-crumb {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+}
+
+/* Footer */
+.main-footer .footer-logo img {
+  max-width: min(240px, 70vw);
+  height: auto;
+}
+
+.footer-widget.ml_50 {
+  margin-left: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .footer-widget.ml_50 {
+    margin-left: 50px;
+  }
+}
+
+/* Forms & buttons: usable on phones */
+.theme-btn-one,
+.theme-btn-two,
+button.theme-btn-one {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Swiper testimonial */
+.testimonial-section .swiper,
+.testimonial-section .swiper-slide {
+  max-width: 100%;
+}
+
+/* FAQ accordion text */
+.faq-page-section .text,
+.faq-page-section p {
+  overflow-wrap: anywhere;
+}
+
+/* Chooseus outer CTA strip */
+@media (max-width: 767px) {
+  .chooseus-section .outer-box {
+    padding: 32px 20px !important;
+    text-align: center;
+  }
+
+  .chooseus-section .outer-box h2 br {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .sec-title.centred h2 br,
+  .sec-title h2 br {
+    display: none;
+  }
+}
+
+.default-form input[type="text"],
+.default-form input[type="email"],
+.default-form input[type="tel"],
+.default-form input[type="number"],
+.default-form textarea,
+.default-form select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.default-form .form-group {
+  min-width: 0;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "veda-workspace",
+  "private": true,
+  "description": "Run backend + admin + front behind one dev port (8080) via dev-gateway.js",
+  "scripts": {
+    "dev": "concurrently -k -n backend,admin,front,gateway \"npm run start --prefix veda_backend\" \"npm run dev --prefix veda_admin\" \"npm run dev --prefix veda_fornt_1\" \"node dev-gateway.js\"",
+    "dev:gateway-only": "node dev-gateway.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "http-proxy": "^1.18.1"
+  }
+}
