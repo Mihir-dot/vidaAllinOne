@@ -31,5 +31,8 @@ pnpm-debug.log*
 # User uploads (runtime)
 veda_backend/uploads/
 
+# Next: copied admin build (generated on deploy)
+veda_fornt_1/public/vidaAdmin/
+
 # Root dev (optional)
 /tmp/
